@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* style for div containing h2*/
+#heading{
+    background-color: rgb(171, 6, 6);
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: min-content; */
+}
+
+h2{
+    color: white;
+    text-align: center;
+}
+
+nav{
+    background-color: black;
+    /* height: 4rem; */
+    position: sticky;
+    top: 0;
+}
+
+nav ul{
+    height: 3.5rem;
+    min-height: min-content;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.navLink{
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+.navLink:hover{
+    color: green;
+    text-align: center;    
+}
+
+.container{
+    min-width: fit-content;
+    /* height: 10rem; */
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.highlight{
+    color: rgb(3, 147, 3);
+}
+
+td:nth-child(1) {
+    width: 1rem;
+}
+
+td:nth-child(2) {
+    width: 34rem;
+}
+
+td:nth-child(3) {
+    width: 50rem;
+}
+
+td:nth-child(4) {
+    width: 60rem;
+}
+
+.formElementsClass, #mobilenumber, #telephonenumber{
+    height: 2rem;
+    width: 50%;
+    border-radius: 0%;
+}
+
+.formEleSizeClass{
+    height: 2rem;
+    width: 30%;
+    border-radius: 0%;
+}
+
+#dob{
+    height: 2rem;
+    width: 25rem;
+}
+
+.selectSizeClass{
+    width: 20rem;
+}
+
+.spanClass{
+    line-height: 1.8rem;
+}
+
+.submitClass{
+    width: 100%;
+    height: 8.5vh;
+    background-color: rgb(2, 142, 2);
+    border: none;
+    border-radius: .6rem;
+    letter-spacing: 0.3rem;
+}

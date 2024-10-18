@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PAN-CARD Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="heading" id="heading">
+                <h2>Request For New PAN Card or/and Changes or correction in PAN data</h2>
+            </div>
+            <!-- <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:3000/PanTrial/Index.html" class="navLink">HOME</a></li>
+                <li><a href="https://www.bankbazaar.com/pan-card/customer-care-number.html" class="navLink"
+                        target="_blank">Need
+                        Help?</a></li>
+                <li><a href="https://cleartax.in/s/how-to-apply-for-pan" class="navLink" target="_blank">How to apply for
+                        PAN-CARD</a></li>
+            </ul>
+        </nav> -->
+        </header>
+        <nav class="navClass">
+            <ul>
+                <li><a href="http://127.0.0.1:3000/PanTrial/Index.html" class="navLink">HOME</a></li>
+                <li><a href="https://www.bankbazaar.com/pan-card/customer-care-number.html" class="navLink"
+                        target="_blank">Need
+                        Help?</a></li>
+                <li><a href="https://cleartax.in/s/how-to-apply-for-pan" class="navLink" target="_blank">How to apply
+                        for
+                        PAN-CARD</a></li>
+            </ul>
+        </nav>
+    
+    <main>
+        <div class="formDiv">
+            <form action="/submit" method="post">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td> <input type="checkbox" name="checkList" id="citizenCheck"> </td>
+                            <td><label for="citizen">Indian citizen: </label></td>
+                            <td colspan="2"><input type="radio" name="citizen" id="citizen" value="yes"><label
+                                    for="citizen">Yes</label>
+                                <input type="radio" name="citizen" id="noncitizen" value="no"><label
+                                    for="noncitizen">No</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="panCheck"></td>
+                            <td><label for="panNumber">Permanent Account Number(PAN): </label></td>
+                            <td colspan="2"><input type="number" name="panNumber" id="panNumber"
+                                    class="formEleSizeClass"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="titleCheck"></td>
+                            <td><label>Title:</label></td>
+                            <td colspan="2"><input type="radio" name="title" id="Mr" value="mr"><label
+                                    for="Mr">Shri/Mr</label>
+                                <input type="radio" name="title" id="Mrs" value="mrs"><label for="Mrs">Shri/Mrs</label>
+                                <input type="radio" name="title" id="Ms" value="ms"><label for="Ms">Kumari/Ms</label>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><input type="checkbox" name="checkList" id="nameCheck"></td>
+                            <td rowspan="3"><label for="name">Name:</label></td>
+                            <td colspan="2"><input type="text" name="name" id="name" class="formElementsClass"
+                                    placeholder="Firstname" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" name="name" id="middlename" class="formElementsClass"
+                                    placeholder="Middlename">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" name="name" id="lastname" class="formElementsClass"
+                                    placeholder="Lastname" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="nameOnCardCheck"></td>
+                            <td><label for="nameOnCard">Name as you would like it to be printed on the card <span
+                                        class="highlight">(Prefix like Shri,Smt,Kumari,late,Dr.CA,Mr,Mrs,M/s.Alins
+                                        ctc,are not allowed)</span></label></td>
+                            <td colspan="2"><input type="text" name="nameOnCard" id="nameOnCard"
+                                    class="formElementsClass"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="singleParentCheck"></td>
+                            <td><label for="singleParentMother">Whether mother is single parent and you wish to apply
+                                    for pan by furnshing
+                                    the name of your mother:</label></td>
+                            <td colspan="2"><input type="radio" name="singleParent" id="singleParentMother"
+                                    value="motherName"><label for="singleParentMother">Yes</label>
+                                <input type="radio" name="singleParent" id="notsingleParent"
+                                    value="notMotherName"><label for="notsingleParent">No</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><input type="checkbox" name="checkList" id="fatherNameCheck"></td>
+                            <td rowspan="3"><label for="fatherFirstName">Father's Name <span
+                                        class="highlight">(Mandatory Field Even married Woman should give father's name
+                                        only)</span></label></td>
+                            <td colspan="2"><input type="text" name="fatherName" id="fatherFirstName"
+                                    class="formElementsClass" placeholder="Firstname" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" name="fatherName" id="fatherMiddleName"
+                                    class="formElementsClass" placeholder="Middlename">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" name="fatherName" id="fatherLastName"
+                                    class="formElementsClass" placeholder="Lastname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><input type="checkbox" name="checkList" id="motherNameCheck"></td>
+                            <td rowspan="3"><label for="motherFirstName">Mother's Name <span class="highlight">(This
+                                        Field is optional)</span></label></td>
+                            <td colspan="2"><input type="text" name="motherName" id="motherFirstName"
+                                    class="formElementsClass" placeholder="Firstname"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" name="motherName" id="motherMiddleName"
+                                    class="formElementsClass" placeholder="Middlename">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" name="motherName" id="motherLastName"
+                                    class="formElementsClass" placeholder="Lastname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="parentNameCheck"></td>
+                            <td><label>Select parent name which is to be Printed on the Card <span class="highlight">(In
+                                        case no option provided then PAN card will be issued with
+                                        father's name)</span></label></td>
+                            <td colspan="2"><input type="radio" name="parentNameOnCard" id="fatherNameOnCard"
+                                    value=""><label for="fatherNameOnCard">Father's Name</label>
+                                <input type="radio" name="parentNameOnCard" id="motherNameOnCard" value=""><label
+                                    for="motherNameOnCard">Mother's Name</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="dobCheck"></td>
+                            <td><label for="dob">Date of Birth:</label></td>
+                            <td colspan="2"><input type="date" name="dob" id="dob"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="genderCheck"></td>
+                            <td><label>Gender:</label></td>
+                            <td colspan="2"><input type="radio" name="gender" id="male" value="male"><label
+                                    for="male">Male</label>
+                                <input type="radio" name="gender" id="female" value="female"><label
+                                    for="female">Female</label>
+                                <input type="radio" name="gender" id="transgender" value="transgender"><label
+                                    for="transgender">Transgender</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="photoCheck"></td>
+                            <td colspan="3"><label>Photo mismatch</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="signatureCheck"></td>
+                            <td colspan="3"><label>Signature mismatch</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="communicationAddressCheck"></td>
+                            <td><label>Address for communication</label></td>
+                            <td colspan="2"><input type="radio" name="communicationAddress" id="resAddress"
+                                    value="residentialAddress"><label for="resAddress">Residential</label>
+                                <input type="radio" name="communicationAddress" id="offAddress"
+                                    value="officeAddress"><label for="offAddress">Office</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="officeNameCheck"></td>
+                            <td><label for="officeName">Office Name</label></td>
+                            <td colspan="2"><input type="text" name="officeName" id="officeName"
+                                    class="formElementsClass" placeholder="Company Name"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="flatCheck"></td>
+                            <td><label for="doorNumber">Flat no./Door no.</label></td>
+                            <td colspan="2"><input type="text" name="doorNumber" id="doorNumber"
+                                    class="formElementsClass" placeholder="Door no.">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="cityCheck"></td>
+                            <td><label for="city">Name of premise/Building Village</label></td>
+                            <td colspan="2"><input type="text" name="city" id="city" class="formElementsClass"
+                                    placeholder="City/Village"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="streetCheck"></td>
+                            <td><label for="street">Road/Street/lane/post-office</label></td>
+                            <td colspan="2"><input type="text" name="street" id="street" class="formElementsClass"
+                                    placeholder="Street"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="landmarkCheck"></td>
+                            <td><label for="landmark">Area/Locality/taluka/sub-divison</label></td>
+                            <td colspan="2"><input type="text" name="landmark" id="landmark" class="formElementsClass"
+                                    placeholder="Landmark">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="districtCheck"></td>
+                            <td><label for="district">Town/city/District</label></td>
+                            <td colspan="2"><input type="text" name="district" id="district" class="formElementsClass"
+                                    placeholder="District">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="stateCheck"></td>
+                            <td><label for="stateList">State/union Territory</label></td>
+                            <td colspan="2"><select name="stateList" id="stateList" class="formElementsClass">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                    <option value="tamilnadu">Tamil Nadu</option>
+                                    <option value="andhrapradesh">Andhra Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="pincodeCheck"></td>
+                            <td><label for="pincode">PIN</label></td>
+                            <td colspan="2"><input type="text" name="pincode" id="pincode" class="formElementsClass"
+                                    placeholder="Pincode"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="countryCheck"></td>
+                            <td><label for="country">Country</label></td>
+                            <td colspan="2"><select name="country" id="country" class="formElementsClass">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                    <option value="india">India</option>
+                                    <option value="uk">UK</option>
+                                    <option value="us">US</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="zipCheck"></td>
+                            <td><label for="zip">ZIP</label></td>
+                            <td colspan="2"><input type="text" name="zip" id="zip" class="formElementsClass"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="otherAddressCheck"></td>
+                            <td colspan="3"><label>If you desire to update other address give required details & submit
+                                    proof of other address also</label></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><input type="checkbox" name="checkList" id="telephoneCheck"></td>
+                            <td rowspan="3"><label>Telephone no.</label></td>
+                            <td colspan="2"><label for="stdcode">Country/STD Code: </label>
+                                <select name="stdcode" id="stdcode">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                    <option value="+91">+91</option>
+                                    <option value="+001">+001</option>
+                                    <option value="+34">+34</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                <table class="nestedTable">
+                                        <tr>
+                                            <td><label for="mobilenumber">Mobile number: </label>
+                                                <input type="radio" name="contact" id="mobilenumber"
+                                                    value="mobile">
+                                            </td>
+                                            <td><label for="telephonenumber">Telephone number: </label>
+                                                <input type="radio" name="contact" id="telephonenumber"
+                                                    value="telephone">
+                                            </td>
+                                        </tr>
+                                </table>
+                            </td> -->
+                            <td><label for="mobile">Mobile number: </label>
+                                <input type="radio" name="contact" id="mobile" value="mobile">
+                            </td>
+                            <td><label for="telephone">Telephone number: </label>
+                                <input type="radio" name="contact" id="telephone" value="telephone">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="mobilenumber">Mobile number:</label>
+                                <input type="tel" name="mobilenumber" id="mobilenumber">
+                            </td>
+                            <td><label for="telephonenumber">Mobile number:</label>
+                                <input type="tel" name="telephonenumber" id="telephonenumber" pattern="\d{10}"
+                                    placeholder="+91/+001">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="emailCheck"></td>
+                            <td><label for="email">Email ID:</label></td>
+                            <td colspan="2"><input type="email" name="email" id="email" class="formElementsClass"
+                                    placeholder="sample@gmail.com"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="indianCitizenIdCheck"></td>
+                            <td><label>Indian citizen ID</label></td>
+                            <td colspan="2"><input type="radio" name="aadhaar" id="aadhaar"><label
+                                    for="aadhaar">AADHAAR</label>
+                                <input type="radio" name="eid" id="eid"><label for="eid">EID</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="aadhaarnumberCheck"></td>
+                            <td><label for="aadhaarnumber">Aadhaar number</label></td>
+                            <td colspan="2"><input type="text" name="aadhaarnumber" id="aadhaarnumber"
+                                    class="formElementsClass" placeholder="Aadhaar number"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="aadhaarnameCheck"></td>
+                            <td><label for="aadhaarname">Name as per in Aadhaar</label></td>
+                            <td colspan="2"><input type="text" name="aadhaarname" id="aadhaarname"
+                                    class="formElementsClass" placeholder="Aadhaar name"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="gstnCheck"></td>
+                            <td><label for="gstn">GSTN</label></td>
+                            <td colspan="2"><input type="text" name="gstn" id="gstn" class="formElementsClass"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="allocatedPanCheck"></td>
+                            <td colspan="3">Mention other peramanent Account Number(PANs) inadvertently allocated to you
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="otherPansCheck"></td>
+                            <td><label for="pan1">PAN 1</label>
+                                <input type="number" name="pan1" id="pan1">
+                            </td>
+                            <td colspan="2"><label for="pan2">PAN 2</label>
+                                <input type="number" name="pan2" id="pan2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="otherPanCheck"></td>
+                            <td><label for="pan3">PAN 3</label>
+                                <input type="number" name="pan3" id="pan3">
+                            </td>
+                            <td colspan="2"><label for="pan4">PAN 4</label>
+                                <input type="number" name="pan4" id="pan4">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="verificationCheck"></td>
+                            <td colspan="3"><label>Verification</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="verifyCheck"></td>
+                            <td colspan="3"><span class="spanClass">I/We <input type="text" name="applicantname" id="applicantname">, the
+                                applicant, in the capacity of <input type="text" name="capacityof" id="capacityof"> do
+                                hereby declare that what is stated above is true to the best of my/our information and
+                                belief.</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="placeCheck"></td>
+                            <td colspan="3"><label for="place">Place</label><input type="text" name="place" id="place">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="documentsCheck"></td>
+                            <td colspan="3"><span class="spanClass">I/We have enclosed <select name="idProof" id="idProof" class="selectSizeClass">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                </select> as proof of identify, <select name="addressProof" id="addressProof" class="selectSizeClass">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                </select> as prood of address, <select name="dobProof" id="dobProof" class="selectSizeClass">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                </select> as proof of date of birth and <select name="allocatedPanProof"
+                                    id="allocatedPanProof" class="selectSizeClass">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                </select> as proof of PAN allocated.</span></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="panTypeCheck"></td>
+                            <td><label>Physical PAN/e-PAN</label></td>
+                            <td colspan="2"><input type="radio" name="panType" id="physicalandePan"
+                                    value="both">Physical Pan card & ePAN card
+                                <input type="radio" name="panType" id="ePan">Only e-PAN card
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="otherDetailCheck"></td>
+                            <td colspan="3"><label>Other details</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="depositAccountCheck"></td>
+                            <td colspan="3"><label>Depository account details</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="depositAccountIdCheck"></td>
+                            <td colspan="3"><label for="dpid">DPID:</label><input type="text" name="dpid" id="dpid">
+                                <label for="clntid">Clint ID:</label><input type="text" name="clntid" id="clntid">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="paymentdetailCheck"></td>
+                            <td colspan="3"><label>Payment details</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="paperlessPanCheck"></td>
+                            <td><label>Paperless PAN application</label></td>
+                            <td colspan="2"><input type="radio" name="paperlessPan" id="paperless"
+                                    value="paperless"><label for="paperless">Yes</label>
+                                <input type="radio" name="paperlessPan" id="paper" value="paper"><label
+                                    for="paperless">No</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="dscCheck"></td>
+                            <td colspan="3"><input type="radio" name="dsc" id="dsc"> <label for="dsc"> DSC </label>
+                                <select name="dscSelect" id="dscSelect">
+                                    <option value="" selected disabled>--Please Select--</option>
+                                </select> <a href="">Guideline for DSC user</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="uploadPhotoCheck"></td>
+                            <td><label for="photoupload">Upload Photo</label></td>
+                            <td><input type="file" name="photoupload" id="photoupload"></td>
+                            <td><label for="signatureupload">Upload Signature</label><input type="file"
+                                    name="signatureupload" id="signatureupload"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="uploadDocumentCheck"></td>
+                            <td><label for="uploaddocument">Upload Document</label></td>
+                            <td colspan="2"><input type="file" name="uploaddocument" id="uploaddocument"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="uploadedPhotoCheck"></td>
+                            <td><label for="uploadedphoto">ALREADY UPLOADED PHOTO</label></td>
+                            <td colspan="2"><input type="text" name="uploadedphoto" id="uploadedphoto"
+                                    class="formElementsClass"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="uploadedSignatureCheck"></td>
+                            <td><label for="uploadedsignature">ALREADY UPLOADED SIGNATURE</label></td>
+                            <td colspan="2"><input type="text" name="uploadedsignature" id="uploadedsignature"
+                                    class="formElementsClass"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="checkList" id="uploadedDocumentsCheck"></td>
+                            <td><label for="uploadeddocuments">ALREADY UPLOADED DOCUMENTS</label></td>
+                            <td colspan="2">
+                                <textarea name="uploadeddocuments" id="uploadeddocuments" cols="45" rows="4"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><input type="submit" class="submitClass" value="SUBMIT"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+
+</html>
